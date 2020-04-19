@@ -40,6 +40,7 @@ public class Main {
             searchRight(planOfHouse, positionI, positionJ);
             searchLeft(planOfHouse,positionI, positionJ);
             searchDown(planOfHouse, positionI, positionJ);
+            searchUp(planOfHouse, positionI, positionJ);
         }
     }
 
@@ -50,6 +51,7 @@ public class Main {
             searchLeft(planOfHouse, positionI, positionJ);
             searchRight(planOfHouse, positionI, positionJ);
             searchDown(planOfHouse, positionI, positionJ);
+            searchUp(planOfHouse, positionI, positionJ);
 
         }
     }
@@ -61,8 +63,21 @@ public class Main {
             searchRight(planOfHouse, positionI, positionJ);
             searchLeft(planOfHouse,positionI, positionJ);
             searchDown(planOfHouse, positionI, positionJ);
+            searchUp(planOfHouse, positionI, positionJ);
         }
     }
+
+    public static void searchUp(int[][] planOfHouse, int positionI, int positionJ) {
+        while (planOfHouse[positionI - 1][positionJ] == 0) {
+            planOfHouse[positionI - 1][positionJ] = -1;
+            positionI--;
+            searchUp(planOfHouse, positionI, positionJ);
+            searchRight(planOfHouse, positionI, positionJ);
+            searchLeft(planOfHouse,positionI, positionJ);
+            searchDown(planOfHouse, positionI, positionJ);
+        }
+    }
+
 
 
 }
